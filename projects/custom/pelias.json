@@ -1,0 +1,136 @@
+{
+  "logger": {
+    "level": "info",
+    "timestamp": false
+  },
+  "esclient": {
+    "apiVersion": "6.8",
+    "hosts": [
+      { "host": "elasticsearch" }
+    ]
+  },
+  "schema": {
+    "typeName": "_doc"
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "3"
+      }
+    }
+  },
+  "acceptance-tests": {
+    "endpoints": {
+      "docker": "http://api:4000/v1/"
+    }
+  },
+  "api": {
+    "services": {
+      "placeholder": { "url": "http://placeholder:4100" },
+      "pip": { "url": "http://pip:4200" },
+      "interpolation": { "url": "http://interpolation:4300" },
+      "libpostal": { "url": "http://libpostal:4400" }
+    }
+  },
+  "imports": {
+    "adminLookup": {
+      "enabled": true
+    },
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "RU"
+    },
+    "openstreetmap": {
+      "download": [
+        { "sourceURL": "https://download.geofabrik.de/russia-latest.osm.pbf" },
+        { "sourceURL": "https://download.geofabrik.de/europe-latest.osm.pbf" }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [{
+        "filename": "russia-latest.osm.pbf"
+      }, {
+        "filename": "europe-latest.osm.pbf"
+      }]
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": [
+        "ru/ce/argun.csv",
+        "ru/ce/gikalo.csv",
+        "ru/ce/grozny.csv",
+        "ru/ce/gudermes.csv",
+        "ru/ce/kurchaloy.csv",
+        "ru/khm/regionwide.csv",
+        "ru/ko/statewide.csv",
+        "ru/mow/statewide.csv",
+        "ru/nvs/statewide.csv",
+        "ru/spe/statewide.csv",
+        "ru/vgg/statewide.csv"
+      ]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [ "extract.0sv" ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "importVenues": false,
+      "importPostalcodes": true,
+      "importPlace": [
+        "85632685",
+        "85633111",
+        "85632393",
+        "85633253",
+        "85633129",
+        "85633723",
+        "85632645",
+        "85633745",
+        "85633337",
+        "85632307",
+        "85633171",
+        "85633735",
+        "85633105",
+        "85632997",
+        "85633237",
+        "85633789",
+        "85632395",
+        "85632717",
+        "85632785",
+        "85633051",
+        "101750367",
+        "85632513",
+        "85633755",
+        "85633001",
+        "85632761",
+        "85633121",
+        "85633769",
+        "85633143",
+        "85632671",
+        "85633163",
+        "85633241",
+        "85632609",
+        "85633229",
+        "85633287",
+        "101748799",
+        "85632405",
+        "85632773",
+        "85633269",
+        "101752489",
+        "85633279",
+        "101751119",
+        "85632373",
+        "85633779",
+        "101751703",
+        "101748841",
+        "101752777",
+        "101748073",
+        "101748323",
+        "101752963",
+        "85633135"
+      ]
+    }
+  }
+}
