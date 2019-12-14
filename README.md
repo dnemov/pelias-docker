@@ -46,7 +46,7 @@ chown 1000:1000 /code /data
 # clone repo
 cd /code
 git clone https://github.com/dnemov/pelias-docker.git
-cd docker
+cd pelias-docker
 
 # install pelias script
 ln -s "$(pwd)/pelias" /usr/local/bin/pelias
