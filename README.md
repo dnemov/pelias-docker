@@ -52,11 +52,13 @@ cd pelias-docker
 ln -s "$(pwd)/pelias" /usr/local/bin/pelias
 
 # cwd
-cd projects/custom
+cd projects/spe
 
 # configure environment
 sed -i '/DATA_DIR/d' .env
 echo 'DATA_DIR=/data' >> .env
+
+PBF2JSON_TAGS="addr:street+addr:housenumber"
 
 # run build
 pelias compose pull
