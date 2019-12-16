@@ -44,12 +44,12 @@
     },
     "openstreetmap": {
       "download": [
-        { "sourceURL": "https://download.geofabrik.de/russia-latest.osm.pbf" }
+        { "sourceURL": "http://osmosis.svimik.com/latest/RU-SPE.osm.pbf" }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
       "import": [{
-        "filename": "northwestern-fed-district-latest.osm.pbf"
+        "filename": "RU-SPE.osm.pbf"
       }]
     },
     "openaddresses": {
