@@ -48,15 +48,10 @@
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
+      "importVenues": false,
       "import": [{
         "filename": "RU-SPE.osm.pbf"
       }]
-    },
-    "openaddresses": {
-      "datapath": "/data/openaddresses",
-      "files": [
-        "ru/spe/statewide.csv"
-      ]
     },
     "polyline": {
       "datapath": "/data/polylines",
